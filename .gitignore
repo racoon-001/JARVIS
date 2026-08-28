@@ -1,0 +1,17 @@
+.env
+node_modules/
+
+# Audio recordings
+*.wav
+*.raw
+
+# Local database files
+*.db
+*.db-shm
+*.db-wal
+
+# Temporary test files
+test-*
+voice-test.*
+# Local Whisper.cpp dependency
+whisper.cpp/
