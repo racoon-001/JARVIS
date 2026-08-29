@@ -1,3 +1,5 @@
+[![JARVIS CI](https://github.com/racoon-001/JARVIS/actions/workflows/ci.yml/badge.svg)](https://github.com/racoon-001/JARVIS/actions/workflows/ci.yml)
+
 # JARVIS — AI-Powered Local Desktop Assistant
 
 JARVIS is a local AI-powered desktop assistant built with **Node.js and TypeScript**. It combines AI capabilities with system-level automation, memory, file operations, process control, screen awareness, and voice interaction.
