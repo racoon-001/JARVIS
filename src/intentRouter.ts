@@ -33,15 +33,17 @@ export function detectIntent(input: string): Intent {
   // =========================
 
   if (
-  text.startsWith("remember ") ||
-  text.startsWith("forget ") ||
-  text.startsWith("what is my ") ||
-  text.startsWith("what's my ") ||
-  text.startsWith("tell me my ") ||
-  (text.startsWith("my ") && text.includes(" is "))
-) {
-  return "memory";
-}
+    text.startsWith("remember ") ||
+    text.startsWith("forget ") ||
+    text.startsWith("what is my ") ||
+    text.startsWith("what's my ") ||
+    text.startsWith("tell me my ") ||
+    text.startsWith("when is my ") ||
+    text.startsWith("do you remember my ") ||
+    (text.startsWith("my ") && text.includes(" is "))
+  ) {
+    return "memory";
+  }
 
   // =========================
   // KNOWN LOCAL COMMANDS

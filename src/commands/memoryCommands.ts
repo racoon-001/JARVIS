@@ -36,6 +36,25 @@ export async function executeMemoryCommand(
     return await remember(key, value);
   }
 
+    // =========================
+  // NATURAL REMEMBER
+  // =========================
+
+  const naturalRememberMatch = text.match(
+    /^my\s+(.+?)\s+is\s+(.+)$/
+  );
+
+  if (naturalRememberMatch) {
+    const key = naturalRememberMatch[1].trim();
+    const value = naturalRememberMatch[2].trim();
+
+    console.log(
+      `🧠 JARVIS: Remembering ${key} = ${value}, ma'am...`
+    );
+
+    return remember(key, value);
+  }
+
   // =========================
   // ALTERNATIVE REMEMBER
   // =========================
@@ -73,9 +92,8 @@ export async function executeMemoryCommand(
   // =========================
 
   const recallMatch = text.match(
-  /^(?:please\s+)?(?:what\s+is|what's|tell\s+me)\s+my\s+(.+)$/
+  /^(?:please\s+)?(?:what\s+is|what's|when\s+is|tell\s+me|do\s+you\s+remember)\s+(?:my\s+)?(.+)$/
 );
-
   if (recallMatch) {
     const key = recallMatch[1].trim();
 

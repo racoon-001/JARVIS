@@ -47,6 +47,17 @@ const tests = [
     input: "What is a CPU?",
     expected: "ai",
   },
+  {
+    input: "My birthdaay is on 30 April",
+    expected: "memory",
+  },
+  {
+    input: "When is my birthday?",
+    expected: "memory",
+  },
+  
+  
+  
 ];
 
 for (const test of tests) {
