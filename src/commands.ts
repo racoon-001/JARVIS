@@ -15,7 +15,7 @@ import {
   findFolder,
 } from "./fileTools.js";
 import { captureScreenshot } from "./screenshotTools.js";
-import { askAIAboutImage } from "./ai.js";
+import { askAI, askAIAboutImage } from "./ai.js";
 // =========================
 // DELETE CONFIRMATION STATE
 // =========================
@@ -356,5 +356,11 @@ if (
     return "I couldn't analyze your screen, ma'am.";
   }
 }
-  return false;
+    // =========================
+  // AI FALLBACK
+  // =========================
+
+  console.log("🤖 JARVIS: Thinking, ma'am...");
+
+  return await askAI(input);
 }

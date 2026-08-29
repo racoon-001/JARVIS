@@ -1,5 +1,5 @@
 import readline from "readline";
-import { exec } from "child_process";
+import { executeCommand } from "./commands.js";
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -7,30 +7,35 @@ const rl = readline.createInterface({
 });
 
 console.log("JARVIS is online.");
-console.log("What can I do for you?");
+console.log('Type "exit" to shut me down.');
 
-rl.question("> ", (command) => {
-  const cmd = command.toLowerCase();
+function askJARVIS(): void {
+  rl.question("> ", async (command) => {
+    const input = command.trim();
 
-  if (cmd.includes("open chrome")) {
-    console.log("Opening Chrome...");
-    exec("start chrome");
+    if (
+      input.toLowerCase() === "exit" ||
+      input.toLowerCase() === "quit"
+    ) {
+      console.log("JARVIS shutting down. Goodbye, ma'am.");
+      rl.close();
+      return;
+    }
 
-  } else if (cmd.includes("open notepad")) {
-    console.log("Opening Notepad...");
-    exec("start notepad");
+    try {
+      const response = await executeCommand(input);
 
-  } else if (cmd.includes("open calculator")) {
-    console.log("Opening Calculator...");
-    exec("start calc");
+      if (response !== false) {
+        console.log(response);
+      } else {
+        console.log("I don't know how to do that yet, ma'am.");
+      }
+    } catch (error) {
+      console.error("JARVIS Error:", error);
+    }
 
-  } else if (cmd.includes("open vscode") || cmd.includes("open vs code")) {
-    console.log("Opening VS Code...");
-    exec("code .");
+    askJARVIS();
+  });
+}
 
-  } else {
-    console.log(`I don't know how to do that yet: ${command}`);
-  }
-
-  rl.close();
-});
+askJARVIS();

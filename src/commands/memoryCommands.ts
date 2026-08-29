@@ -73,8 +73,8 @@ export async function executeMemoryCommand(
   // =========================
 
   const recallMatch = text.match(
-    /^(?:please\s+)?(?:what\s+is|what's|tell\s+me|do\s+you\s+remember)\s+(?:my\s+)?(.+)$/
-  );
+  /^(?:please\s+)?(?:what\s+is|what's|tell\s+me)\s+my\s+(.+)$/
+);
 
   if (recallMatch) {
     const key = recallMatch[1].trim();
