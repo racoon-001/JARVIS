@@ -4,10 +4,11 @@
   "main": "index.js",
   "type": "module",
  "scripts": {
-  "build": "tsc",
-  "start": "node dist/index.js",
-  "test": "tsx src/testIntentRouter.ts && tsx src/testDatabase.ts"
-},
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "voice": "tsx src/voiceAssistant.ts",
+    "test": "tsx src/testIntentRouter.ts && tsx src/testDatabase.ts"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
