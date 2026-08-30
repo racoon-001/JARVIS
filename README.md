@@ -6,6 +6,15 @@ JARVIS is a local AI-powered desktop assistant built with **Node.js and TypeScri
 
 The project is designed to run locally on a Windows PC and demonstrates practical use of **TypeScript, AI APIs, SQLite, Docker, GitHub Actions, and automated testing**.
 
+## 🎥 Live Demo
+
+[▶️ Watch the JARVIS Live Demo](https://youtu.be/SpagTKye-fE)
+
+This live demonstration showcases JARVIS running locally on Windows, including voice interaction, persistent SQLite memory, desktop automation, Gemini AI responses, screen awareness, and the GitHub Actions CI pipeline.
+
+> **Note:** Some operations take a few seconds because the demo shows the complete real-time pipeline — microphone input → speech-to-text → intent detection → local command/Gemini processing → response.
+
+
 ## 🚀 Features
 
 * 🤖 AI-powered question answering using Google Gemini
