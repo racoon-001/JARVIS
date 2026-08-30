@@ -16,3 +16,10 @@ voice-test.*
 # Local Whisper.cpp dependency
 dist/
 whisper.cpp/
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
