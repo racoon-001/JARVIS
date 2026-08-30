@@ -59,9 +59,6 @@ export async function executeCommand(
 // =========================
 // DELETE CONFIRMATION
 // =========================
-console.log(
-  `🧪 DEBUG pendingDeletePath: ${pendingDeletePath}`
-);
 
   // =========================
 // DELETE CONFIRMATION
@@ -73,10 +70,7 @@ if (pendingDeletePath !== null) {
     .replace(/[!?.,]+$/, "")
     .trim();
 
-  console.log(
-    `🧪 DEBUG confirmationInput: ${confirmationInput}`
-  );
-
+  
   if (
     confirmationInput === "yes" ||
     confirmationInput === "yes please" ||
